@@ -113,7 +113,7 @@ class TaskController
 
                 //域名
                 $url = cmf_get_domain() . "/h5/#/pages/order/pOrderDetail?order_num={$order_info['order_num']}&is_receiving=1";
-                if ($user_info['wx_openid']) $SendTempMsgController->sendTempMsg($user_info['wx_openid'], '9fs7aMnl0rEdskNPlmscirG1YOzQsnTWd63He-QHnfU', $send_data, '', 1, $url);
+                if ($user_info['wx_openid']) $SendTempMsgController->sendTempMsg($user_info['wx_openid'], 'LGVJSLRR7Y9Zx6PvQb2-2be_Xi13Ib2X9h9HHFLBn3c', $send_data, '', 1, $url);
             }
         }
 

@@ -230,7 +230,7 @@ class NotifyController extends AuthController
 
 
             //如果是抽奖订单,开始抽奖
-            if ($order['package_id'] == 1) {
+            if (in_array($order['package_id'], [1, 2])) {
                 $DrawController       = new DrawController();
                 $draw_info            = $DrawController->draw();
                 $update['draw_id']    = $draw_info['id'];

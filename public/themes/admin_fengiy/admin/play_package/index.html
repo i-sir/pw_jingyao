@@ -174,7 +174,7 @@
                                href="{:url('edit',['id'=>$vo.id,'params'=>$params])}">编辑</a>
                         </if>
 
-                        <if condition="cmf_auth_check(cmf_get_current_admin_id(),'admin/PlayPackage/delete') && $vo.id != 1">
+                        <if condition="cmf_auth_check(cmf_get_current_admin_id(),'admin/PlayPackage/delete') &&  !in_array($vo.id,[1,2])">
                             <a class="layui-btn layui-btn-primary layui-border-red layui-btn-xs js-ajax-delete"
                                href="{:url('delete',['id'=>$vo.id,'params'=>$params])}">删除</a>
                         </if>
