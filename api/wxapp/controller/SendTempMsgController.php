@@ -293,11 +293,11 @@ class SendTempMsgController extends AuthController
         $result = json_decode($result, true);
 
 
-        //        Log::write("wxSendTempMsg");
-        //        Log::write("发送公众号提醒:{$template_id}");
-        //        Log::write("通知人:{$openid}");
-        //        Log::write("通知内容:");
-        //        Log::write($send_data);
+        Log::write("wxSendTempMsg");
+        Log::write("发送公众号提醒:{$template_id}");
+        Log::write("通知人:{$openid}");
+        Log::write("通知内容:");
+        Log::write($send_data);
 
 
         Log::write("通知结果:");

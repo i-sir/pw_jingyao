@@ -93,15 +93,20 @@ class TaskController
         $map[] = ['status', '=', 20];
 
         //查出套餐
-        $order_list = $PlayPackageOrderModel->where($map)->field('nickname,name,area,amount,id,order_num')->select();
+        $order_list = $PlayPackageOrderModel
+            ->where($map)
+            ->field('nickname,name,area,amount,id,order_num')
+            ->select();
+
 
         //修改已发送状态
         $PlayPackageOrderModel->where($map)->update(['is_send' => 1, 'update_time' => time()]);
 
         foreach ($order_list as $key => $order_info) {
             //查出套餐对应陪玩
-            $map100    = [];
-            $map100[]  = ['area', 'like', "%{$order_info['area']}%"];
+            $map100 = [];
+            //$map100[]  = ['area', 'like', "%{$order_info['area']}%"];
+            $map100[]  = ['is_block', '=', 2];
             $user_list = $MemberPlayModel->where($map100)->column('wx_openid,phone');
             foreach ($user_list as $key2 => $user_info) {
                 $send_data = [
