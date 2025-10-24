@@ -118,6 +118,7 @@ class TaskController
 
                 //域名
                 $url = cmf_get_domain() . "/h5/#/pages/order/pOrderDetail?order_num={$order_info['order_num']}&is_receiving=1";
+                $url = cmf_get_domain() . "/h5/#/pages/order/index";
                 if ($user_info['wx_openid']) $SendTempMsgController->sendTempMsg($user_info['wx_openid'], 'LGVJSLRR7Y9Zx6PvQb2-2be_Xi13Ib2X9h9HHFLBn3c', $send_data, '', 1, $url);
             }
         }

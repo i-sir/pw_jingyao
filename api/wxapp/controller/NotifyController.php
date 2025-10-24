@@ -255,11 +255,10 @@ class NotifyController extends AuthController
             //下单指定陪玩,通知对方
             if ($order['play_user_id']) {
                 $send_data = [
-                    'thing20'           => ['value' => $order['nickname']],
-                    'character_string1' => ['value' => $order['order_num']],
-                    'thing19'           => ['value' => $order['name']],
-                    'amount4'           => ['value' => $order['amount']],
-                    'time5'             => ['value' => date('Y-m-d H:i:s')],
+                    'thing3'           => ['value' => $order['nickname']],
+                    'thing5'           => ['value' => $order['name']],
+                    'amount11'           => ['value' => $order['amount']],
+                    'time2'             => ['value' => date('Y-m-d H:i:s')],
                 ];
 
                 $map40   = [];
@@ -268,6 +267,8 @@ class NotifyController extends AuthController
 
                 //域名
                 $url = cmf_get_domain() . "/h5/#/pages/order/pOrderDetail?order_num={$order_num}&is_receiving=1";
+
+                $url = cmf_get_domain() . "/h5/#/pages/order/index";
                 if ($openid) $SendTempMsgController->sendTempMsg($openid, 'WUtxLcep8pFkTk_v7029_DS_JYnAcARXtXRUFaP_730', $send_data, '', 1, $url);
 
                 //陪玩接单

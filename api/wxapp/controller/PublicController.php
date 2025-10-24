@@ -87,28 +87,26 @@ class PublicController extends AuthController
      */
     public function index()
     {
-        $SendTempMsgController      = new SendTempMsgController();
+        $SendTempMsgController = new SendTempMsgController();
 
         $send_data = [
-            'thing20'           => ['value' => '张飒'],
-            'character_string1' => ['value' => cmf_order_sn()],
-            'thing19'           => ['value' =>'游戏名'],
-            'amount4'           => ['value' => 18],
-            'time5'             => ['value' => date('Y-m-d H:i:s')],
+            'thing3'           => ['value' => '张三'],
+            'thing5'           => ['value' => '测试'],
+            'amount11'           => ['value' => 11],
+            'time2'             => ['value' => date('Y-m-d H:i:s')],
         ];
 
 
-        $openid  ='o7QK-7YuP2llg0f4Qz-6t1sbqVh0';
-        $openid  ='o7QK-7QGO1XNhrrhlcTcNeOPJBtk';
+        $openid = 'o7QK-7YuP2llg0f4Qz-6t1sbqVh0';
+        $openid = 'oG6T8166IW2ctwLPnC5BC6UCsMcY';
 
         //域名
+//        $url = cmf_get_domain() . "/h5/#/pages/order/index";
         $url = cmf_get_domain() . "/h5/#/pages/order/index";
-        $url = cmf_get_domain() . "/h5/#/pages/order/index";
-        $SendTempMsgController->sendTempMsg($openid, 'WUtxLcep8pFkTk_v7029_DS_JYnAcARXtXRUFaP_730', $send_data,null,1,$url);
+        $a   = $SendTempMsgController->sendTempMsg($openid, 'LGVJSLRR7Y9Zx6PvQb2-2be_Xi13Ib2X9h9HHFLBn3c', $send_data, null, 1,$url);
 
 
-
-        $this->success('请求成功', []);
+        $this->success('请求成功', $a);
     }
 
 
